@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Ambiente Cultural</title>
+<style>
+body{
+    background-color:lightblue;
+}
+.container{
+    background-color:white;
+}
+.hombre-libro{
+    top:130px;
+    height:250px;
+    width:300px
+}
+.hombre-pelicula{
+    top:130px;
+    height:250px;
+    width:300px;
+    left:75%;
+}
+.titulo{
+    background-color:lightgrey;
+    height:250px;
+    width:700px;
+    text-align:center;
+    position:relative;
+    left:25%;
+}
+.titulo_h1{
+    color: darkgrey;
+    text-align: center;
+    margin-top: 100px;
+    position: absolute;
+    margin-left: 23px;
+}
+
+</style>
+</head>
+<body>
+   <div class="titulo">
+   <% if user_signed_in? %>
+   <h1 class="titulo_h1">Bienvenido <%= current_user.email %></h1>
+  <% else %>
+    <h1 class="titulo_h1">Bienvenido a Ambiente Cultural</h1>
+  <% end %>  
+   </div>
+    <h3>Tu Sitio Para Aprender Sobre Libros Y Peliculas</h3>
+    <img class="hombre-libro" src="/images/hombre-leyendo-libro.jpg">
+    <img class="hombre-pelicula" src="/images/hombre-viendo-la-tele.jpg">
+    <div class="container">
+    <h4>Quienes somos?</h4>
+    <p>Somos una plataforma web informativa y divulgativa donde todo el mundo puede entrar y ver nuestras base de datos
+    de libros y peliculas, para así poder encontrar su proximo entretenimiento. </p>
+    </div>
+</body>
+</html> 
+

@@ -1,0 +1,39 @@
+<%= form_tag libros_path do %>
+ <div class="form-group">
+    <%= label_tag :titulo  %>
+    <%= text_field_tag :titulo %> 
+ </div>
+ <br>
+ <div class="form-group">
+    <%= label_tag :autor  %>
+    <%= text_field_tag :autor  %>
+ </div>
+ <br>
+  <div class="form-group">
+    <%= label_tag :genero  %>
+    <%= text_field_tag :genero  %>
+ </div>
+ <br>
+ <div class="form-group">
+    <%= label_tag :año  %>
+    <%= text_field_tag :anyo  %>
+ </div>
+ <br>
+ <div class="form-group">
+    <%= label_tag :paginas  %>
+    <%= text_field_tag :paginas  %>
+ </div>
+ <br>
+  <div class="form-group">
+    <%= label_tag :editorial  %>
+    <%= text_field_tag :editorial  %>
+ </div>
+ <br>
+ <div class="form-group">
+    <%= label_tag :puntuacion  %>
+    <%= text_field_tag :puntuacion  %>
+ </div>
+ <br>
+    <%= submit_tag %>
+
+<% end %>    

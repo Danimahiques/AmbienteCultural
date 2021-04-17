@@ -1,0 +1,100 @@
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  margin-left: 30vw;
+  margin-top: 5vw;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+</style>
+</head>
+<h2 style="text-align:center; text-decoration:underline;">Peliculas</h2>
+<%
+@lista_peliculas.each do |registro| 
+
+%>
+
+
+<div class="card">
+  <div class="container">
+    <h4>Titulo:<b><%= registro.titulo %></b></h4> 
+    <p>Director: <%= registro.director %></p> 
+    <p>Actores: <%= registro.actores %></p> 
+    <p>Año: <%= registro.anyo %></p> 
+    <p>Paises: <%= registro.pais %></p> 
+    
+    <form style="position: relative;left: -33vw;">
+  <p class="clasificacion">
+    <input id="radio1" type="radio" name="estrellas" value="5"><!--
+    --><label for="radio1">★</label><!--
+    --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+    --><label for="radio2">★</label><!--
+    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+    --><label for="radio3">★</label><!--
+    --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+    --><label for="radio4">★</label><!--
+    --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+    --><label for="radio5">★</label>
+  </p>
+  
+</form>
+  <% if current_user.role == "admin" %>
+ <%= link_to "Eliminar", "/peliculas/" + registro.id.to_s, method: :eliminar %>
+ <a href="/peliculas/editar/<%= registro.id.to_s%>">Editar</a> 
+ <%= link_to "Mostrar Datos", "/peliculas/show/" + registro.id.to_s, method: :show %>
+ 
+  <% else %>
+
+  <%end%> 
+  </div>
+  
+</div>
+<%end%>
+

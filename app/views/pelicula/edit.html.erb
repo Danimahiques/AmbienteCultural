@@ -1,0 +1,62 @@
+<h1>Editando Peliculas</h1>
+
+<%= form_for @pelicula do |f|%>  
+  <% if @pelicula.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@pelicula.errors.count, "error") %> prohibited
+      this post from being saved:</h2>
+    <ul>
+    <% @pelicula.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </p>
+  <p>
+    <%= f.label :director %><br>
+    <%= f.text_field :director %>
+  </p>
+    <p>
+    <%= f.label :actores %><br>
+    <%= f.text_field :actores %>
+  </p>
+  </p>
+    <p>
+    <%= f.label :premios %><br>
+    <%= f.text_field :premios %>
+  </p>
+  </p>
+    <p>
+    <%= f.label :año %><br>
+    <%= f.text_field :anyo %>
+  </p>
+  </p>
+   
+  </p>
+    <p>
+    <%= f.label :duracion %><br>
+    <%= f.text_field :duracion %>
+  </p>
+  <p>
+    <%= f.label :pais %><br>
+    <%= f.text_field :pais %>
+  </p>
+  <p>
+    <%= f.label :puntuacion %><br>
+    <%= f.text_field :puntuacion %>
+  </p>
+  <p>
+    <%= f.label :imagen %><br>
+    <%= f.text_field :imagen %>
+  </p>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', :action => :index %>

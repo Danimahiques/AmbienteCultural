@@ -1,0 +1,24 @@
+<%= flash[:notice] %>
+
+<table style="border: 2px solid black; position:relative; left:35%; width:1vw; text-align:center;">
+    <tr>
+        <td style="border: 2px solid black">Id</td>
+        <td style="border: 2px solid black">Email</td>
+        <td style="border: 2px solid black; text-align:center">Acción</td>
+    </tr>    
+<%
+@lista_users.each do |registro| 
+%>
+    <tr>
+        <td style="border: 2px solid black"> <%= registro.id %> </td>
+        <td style="border: 2px solid black"> <%= registro.email %> </td>
+        <td style="border: 2px solid black">
+            <a href="#">Editar</a>  
+            <a href="#">Consultar</a> 
+            <%= link_to "Eliminar", "/users/eliminar/" + registro.id.to_s, method: :delete %>
+        </td>
+    </tr>    
+<%
+end
+%>
+</table>

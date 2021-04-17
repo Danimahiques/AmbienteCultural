@@ -1,0 +1,49 @@
+<%= form_tag peliculas_path do %>
+ <div class="form-group">
+    <%= label_tag :titulo  %>
+    <%= text_field_tag :titulo %> 
+ </div>
+ <br>
+ <div class="form-group">
+    <%= label_tag :director  %>
+    <%= text_field_tag :director  %>
+ </div>
+ <br>
+  <div class="form-group">
+    <%= label_tag :actores  %>
+    <%= text_field_tag :actores  %>
+ </div>
+ <br>
+ <div class="form-group">
+    <%= label_tag :año  %>
+    <%= text_field_tag :anyo  %>
+ </div>
+ <br>
+ <div class="form-group">
+    <%= label_tag :premios  %>
+    <%= text_field_tag :premios  %>
+ </div>
+ <br>
+  <div class="form-group">
+    <%= label_tag :duracion  %>
+    <%= text_field_tag :duracion  %>
+ </div>
+ <br>
+ <div class="form-group">
+    <%= label_tag :pais  %>
+    <%= text_field_tag :pais  %>
+ </div>
+ <br>
+ <div class="form-group">
+    <%= label_tag :puntuacion  %>
+    <%= text_field_tag :puntuacion  %>
+ </div>
+ <br>
+ <div class="form-group">
+    <%= label_tag :imagen  %>
+    <%= text_field_tag :imagen  %>
+ </div>
+ <br>
+    <%= submit_tag %>
+
+<% end %>    
